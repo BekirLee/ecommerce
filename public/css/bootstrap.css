@@ -1,0 +1,35 @@
+.title {
+    display: block;
+    text-decoration: none;
+    color: #51583e
+}
+
+.card .d-block {
+    position: relative
+}
+
+.price-wrap {
+    text-decoration: none;
+    color: #51583e
+}
+
+.bd {
+    position: relative
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px
+}
+
+.info-wrap {
+    font-size: 13px
+}
+
+.my-fluid {
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    object-fit: contain
+}
