@@ -1,7 +1,7 @@
 let products = [
     {
         id: 1,
-        price: 123,
+        price: 1800,
         discount: 10,
         name: "Electronics",
         img: "./public/img/8.jpeg",
@@ -11,7 +11,7 @@ let products = [
 
     {
         id: 2,
-        price: 123,
+        price: 2000,
         discount: 10,
         name: "Electronics",
         img: "./public/img/7.jpeg",
@@ -20,7 +20,7 @@ let products = [
 
     {
         id: 3,
-        price: 100,
+        price: 1000,
         discount: 10,
         name: "Electronics",
         img: "./public/img/6.jpeg",
@@ -30,7 +30,7 @@ let products = [
 
     {
         id: 4,
-        price: 90,
+        price: 2000,
         discount: 10,
         name: "Electronics",
         img: "./public/img/7.jpeg",
@@ -42,24 +42,24 @@ let products = [
 let watchs = [
     {
         id: 1,
-        name: "watch1",
+        name: "Watch1",
         image: "./public/img/1.jpeg",
         discount: "10%sale",
     },
     {
         id: 2,
-        name: "watch2",
+        name: "Watch2",
         image: "./public/img/3.jpeg",
     },
     {
         id: 3,
-        name: "watch3",
+        name: "Watch3",
         image: "./public/img/2.jpeg",
         discount: "10%sale",
     },
     {
         id: 4,
-        name: "watch3",
+        name: "Watch3",
         image: "./public/img/4.jpeg",
     },
 ]
@@ -161,13 +161,14 @@ function displaytask() {
                 <a href="${result.href}" class="price-wrap">
                 <span style="margin-right:10px;" class="price"> ${result.price - (result.price * result.discount) / 100} <i class="fa-solid fa-manat-sign"></i></span>
                 <del class="old-price"> ${result.price} <i class="fa-solid fa-manat-sign"></i></del>
-                </a>
-                </figcaption>
+                </a> 
                 <ul class="border-top">
-                <li>Istehsalçi:Apple</li>
-                <li>Növ:Smartfon</li>
-                <li>Operativ yaddaş:16Gb</li>
+                <li>Istehsalçi: Apple</li>
+                <li>Növ: Smartfon</li>
+                <li>Operativ yaddaş: 16Gb</li>
                 </ul>
+                </figcaption>
+               
                  
 
                 </figure>
@@ -197,15 +198,16 @@ function bring_watchs() {
                    ${taken_product.name}
                 </a>
                 <a href="#" class="price-wrap">
-                <span style="margin-right:10px;" class="price">1000 man <i class="fa-solid fa-manat-sign"></i></span>
-                <del class="old-price"> 10000 man<i class="fa-solid fa-manat-sign"></i></del>
-                </a>
-                </figcaption>
-                <ul class="border-top">
-                <li>Istehsalçi:Apple</li>
-                <li>Növ:Smartfon</li>
-                <li>Operativ yaddaş:16Gb</li>
+                <span style="margin-right:10px;" class="price">180 man <i class="fa-solid fa-manat-sign"></i></span>
+                <del class="old-price"> 200 man<i class="fa-solid fa-manat-sign"></i></del>
+                </a> 
+                <ul class="border-top watch">
+                <li>Istehsalçi: Apple</li>
+                <li>Növ: Saat</li>
+                <li>Adapter muddeti: 8saat</li>
                 </ul>
+                </figcaption>
+               
                  
 
                 </figure>
@@ -230,6 +232,8 @@ function page_links() {
 
 
 }
+
+
 function slider() {
     let slide_img = document.getElementById("slides");
     for (changes of images) {

@@ -44,7 +44,7 @@
 .row ul {
     display: none;
     text-decoration: none;
-    
+
 }
 
 .container .product:hover ul {
@@ -52,4 +52,12 @@
     display: inline-block;
     text-decoration: none;
     transition: 0.9s;
+}
+
+.watch:hover {
+    padding: 17px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.9s;
+
 }
