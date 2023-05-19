@@ -54,10 +54,10 @@
     transition: 0.9s;
 }
 
-/* .container .product.card:hover{
+.container .product.card:hover{
     box-shadow: #9ed30d;
 
-} */
+}
 
 .watch:hover {
     padding: 17px;
