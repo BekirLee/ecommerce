@@ -207,8 +207,6 @@ function bring_watchs() {
                 <li>Adapter muddeti: 8saat</li>
                 </ul>
                 </figcaption>
-               
-                 
 
                 </figure>
                 
@@ -238,13 +236,13 @@ function slider() {
     let slide_img = document.getElementById("slides");
     for (changes of images) {
 
-        let image = `
+        var image = `
              <div id="${changes.id}"  class="carosel-item active "> 
                 <img  src="${changes.photo}" class="d-block w-100"
                     alt="No">   
             </div>
         `;
-        slide_img.insertAdjacentHTML("beforeend", image);
+        slide_img.insertAdjacentHTML("afterend", image);
     }
 }
 
