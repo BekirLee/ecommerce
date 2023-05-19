@@ -31,5 +31,39 @@
     width: 100%;
     padding: 10px;
     height: 200px;
-    object-fit: contain
+    object-fit: contain;
+}
+
+.container .product:hover {
+    height: 400px;
+    padding: 10px;
+    box-shadow: #0a930d;
+    border-bottom: black;
+}
+
+.row ul {
+    display: none;
+    text-decoration: none;
+
+}
+
+.container .product:hover ul {
+    padding: 17px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.9s;
+}
+
+.container .product.card:hover{
+    box-shadow: #9ed30d;
+
+}
+
+.watch:hover {
+    padding: 17px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.9s;
+
+
 }
