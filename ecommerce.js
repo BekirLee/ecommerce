@@ -3,7 +3,9 @@ let products = [
         id: 1,
         price: 1800,
         discount: 10,
-        name: "Electronics",
+        brand: "Apple",
+        category: "phone",
+        name: "Iphone",
         img: "./public/img/8.jpeg",
         href: "pages/products.html"
     },
@@ -12,8 +14,10 @@ let products = [
     {
         id: 2,
         price: 2000,
-        discount: 10,
-        name: "Electronics",
+        discount: 9,
+        category: "phone",
+        brand: "Apple",
+        name: "Iphone",
         img: "./public/img/7.jpeg",
         href: "pages/products.html"
     },
@@ -22,7 +26,9 @@ let products = [
         id: 3,
         price: 1000,
         discount: 10,
-        name: "Electronics",
+        category: "phone",
+        brand: "Apple",
+        name: "Iphone",
         img: "./public/img/6.jpeg",
         href: "pages/products.html"
     },
@@ -32,37 +38,55 @@ let products = [
         id: 4,
         price: 2000,
         discount: 10,
-        name: "Electronics",
+        category: "phone",
+        brand: "Apple",
+        name: "Iphone",
         img: "./public/img/7.jpeg",
+        href: "pages/products.html"
+    },
+    {
+        id: 5,
+        price: 1800,
+        name: "Watch1",
+        category: "watch",
+        brand: "Apple",
+        img: "./public/img/1.jpeg",
+        discount: 30,
+        href: "pages/products.html"
+    },
+    {
+        id: 6,
+        price: 1800,
+        name: "Watch2",
+        category: "watch",
+        brand: "Apple",
+        img: "./public/img/3.jpeg",
+        discount: 0,
+        href: "pages/products.html"
+    },
+    {
+        id: 7,
+        price: 1800,
+        name: "Watch3",
+        brand: "Apple",
+        category: "watch",
+        img: "./public/img/2.jpeg",
+        discount: 10,
+        href: "pages/products.html"
+    },
+    {
+        id: 8,
+        name: "Watch3",
+        price: 1800,
+        category: "watch",
+        brand: "Apple",
+        img: "./public/img/4.jpeg",
+        discount: 0,
         href: "pages/products.html"
     },
 
 ]
-
-let watchs = [
-    {
-        id: 1,
-        name: "Watch1",
-        image: "./public/img/1.jpeg",
-        discount: "10%sale",
-    },
-    {
-        id: 2,
-        name: "Watch2",
-        image: "./public/img/3.jpeg",
-    },
-    {
-        id: 3,
-        name: "Watch3",
-        image: "./public/img/2.jpeg",
-        discount: "10%sale",
-    },
-    {
-        id: 4,
-        name: "Watch3",
-        image: "./public/img/4.jpeg",
-    },
-]
+products.sort((a, b) => a.discount - b.discount);
 
 let links = [
     {
@@ -134,43 +158,41 @@ let images = [
 ]
 
 
-displaytask();
-bring_watchs();
+getProducts();
 page_links();
 slider();
 
-function displaytask() {
+function getProducts() {
 
     let productsInner = document.getElementById("products");
 
-    for (result of products) {
+    for (product of products) {
         let product1 = `
-                <div id="${result.id}" class="col-lg-3 col-md-4 col-sm-6 ">
-                <figure class="card shadow-lg product" >
-                <a href="${result.href}" class="d-block bd">
-                <span class="badge bg-success">Endirim</span>
-                <img src="${result.img}"" alt="" class="my-fluid">
+                <div id="${product.id}" class="col-lg-3 col-md-4 col-sm-6 ">
+                <figure class="card my-shadow product" >
+                <a href="${product.href}" class="d-block bd">
+                <span class="badge bg-success ${product.discount ? '' : 'd-none'}">Endirim</span>
+                <img src="${product.img}"" alt="" class="my-fluid">
                 </a>    
                 <figcaption class="info-wrap border-top p-3">
                 <a href="/" class="float-end border p-2 me-1">
                 <i class="fa fa-heart"></i>
                 </a>
-                <a href="${result.href}" class="title text-truncate ">
-              ${result.name}
+                <a href="${product.href}" class="title text-truncate ">
+              ${product.name}
                 </a>
-                <a href="${result.href}" class="price-wrap">
-                <span style="margin-right:10px;" class="price"> ${result.price - (result.price * result.discount) / 100} <i class="fa-solid fa-manat-sign"></i></span>
-                <del class="old-price"> ${result.price} <i class="fa-solid fa-manat-sign"></i></del>
+                <a href="${product.href}" class="price-wrap">
+                <span  class="price ${product.discount ? '' : 'd-none'}"> ${product.price - (product.price * product.discount) / 100} <i class="fa-solid fa-manat-sign"></i></span>
+                <span class="${product.discount ? 'old-price' : ''}"> ${product.price} <i class="fa-solid fa-manat-sign"></i></span>
                 </a> 
-                <ul class="border-top">
-                <li>Istehsalçi: Apple</li>
-                <li>Növ: Smartfon</li>
+                </figcaption>
+                <div class="product-detail my-shadow">
+                <ul class="">
+                <li>Istehsalçi: ${product.brand}</li>
+                <li>Növ: ${product.category}</li>
                 <li>Operativ yaddaş: 16Gb</li>
                 </ul>
-                </figcaption>
-               
-                 
-
+                </div>
                 </figure>
                 
                    </div>   `;
@@ -178,74 +200,30 @@ function displaytask() {
 
     }
 }
-function bring_watchs() {
-
-    let bringer = document.getElementById("products")
-
-    for (taken_product of watchs) {
-        let product2 = `
-                <div id="${taken_product.id}" class="col-lg-3 col-md-4 col-sm-6 ">
-                <figure class="card shadow-lg product" >
-                <a href="#" class="d-block bd">
-                <span class="badge bg-success">${taken_product.discount}</span>
-                <img src="${taken_product.image}"" alt="" class="my-fluid">
-                </a>    
-                <figcaption class="info-wrap border-top p-3">
-                <a href="/" class="float-end border p-2 me-1">
-                <i class="fa fa-heart"></i>
-                </a>
-                <a href="#" class="title text-truncate ">
-                   ${taken_product.name}
-                </a>
-                <a href="#" class="price-wrap">
-                <span style="margin-right:10px;" class="price">180 man <i class="fa-solid fa-manat-sign"></i></span>
-                <del class="old-price"> 200 man<i class="fa-solid fa-manat-sign"></i></del>
-                </a> 
-                <ul class="border-top watch">
-                <li>Istehsalçi: Apple</li>
-                <li>Növ: Saat</li>
-                <li>Adapter muddeti: 8saat</li>
-                </ul>
-                </figcaption>
-
-                </figure>
-                
-                 </div>   `;
-        bringer.insertAdjacentHTML("beforeend", product2);
-    }
-
-
-}
-
-
 
 function page_links() {
 
-    let Innerproduct = document.getElementById("nav");
+    let categories = document.getElementById("categories");
 
-    for (linked of links) {
-        var link = ` <a href="${linked.href}" id="${linked.id}" class="nav-link active">${linked.name}</a> `;
-        Innerproduct.insertAdjacentHTML("beforeend", link);
+    for (let item of links) {
+        var link = ` <a href="${item.href}" id="${item.id}" class="nav-link active">${item.name}</a> `;
+        categories.insertAdjacentHTML("beforeend", link);
     };
-
 
 }
 
 
 function slider() {
-    let slide_img = document.getElementById("slides");
-    for (changes of images) {
+    let slide_img = document.getElementById("sliders");
+    for (slideImage of images) {
 
         var image = `
-             <div id="${changes.id}"  class="carosel-item active "> 
-                <img  src="${changes.photo}" class="d-block w-100"
+             <div id="${slideImage.id}" class="carousel-item ${slideImage.id == 2 ? 'active' : ' '}"> 
+                <img  src="${slideImage.photo}" class="d-block w-100"
                     alt="No">   
             </div>
+            
         `;
-        slide_img.insertAdjacentHTML("afterend", image);
+        slide_img.insertAdjacentHTML("beforeend", image);
     }
 }
-
-
-//   <img src="${images.photo}" class="d-block w-100"
-//                 alt="Oops">
