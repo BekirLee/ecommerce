@@ -166,7 +166,7 @@ function getProducts() {
 
     let productsInner = document.getElementById("products");
 
-    for (product of products) {
+    for (let product of products) {
         let product1 = `
                 <div id="${product.id}" class="col-lg-3 col-md-4 col-sm-6 ">
                 <figure class="card my-shadow product" >
